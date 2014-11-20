@@ -14,9 +14,9 @@ require 'vendor/autoload.php';
 class HoneywellWifiAPI
 {
 	const USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36';
-	const USERNAME = 'cjmaio21@gmail.com';
-	const PASSWORD = 'Yesh0m0br0!!!!!';
-	const DEVICE_ID = 691834;
+	const USERNAME = '***';
+	const PASSWORD = '***';
+	const DEVICE_ID = 000;
 	const PROTOCOL = 'https';
 	const URL = 'mytotalconnectcomfort.com';
 
