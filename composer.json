@@ -1,5 +1,24 @@
 {
+	"name": "cjmaio/honeywell-wifi-api",
+	"type": "library",
+	"description": "An unofficial API for the Honeywell Total Comfort Connect line of connected thermostats.",
+	"keywords": ["honeywell", "thermostat", "api", "wifi", "cjmaio"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Christopher Maio",
+			"email": "cjmaio@innerdev.me",
+			"homepage": "http://innerdev.me",
+			"role": "Developer"
+		}
+	],
     "require": {
+    	"php": ">=5.5.0",
         "guzzlehttp/guzzle": "~5.0"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"cjmaio": "src"
+    	}
     }
 }
