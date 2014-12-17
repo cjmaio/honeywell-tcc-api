@@ -141,6 +141,26 @@ class HoneywellWifiAPI
 	}
 
 	/**
+	 * Set the current Cool temperature for the thermostat
+	 *
+	 * @param $temperature float
+	 * @return Boolean
+	 */
+	public function setCoolTemperature($temperature)
+	{
+		$body = ['CoolSetpoint' => $temperature];
+
+		try {
+			$this->postToThermostat($body);
+		} catch(Exception $e) {
+			return false;
+		}
+		
+		// TODO: Need error checking
+		return true;
+	}
+
+	/**
 	 * Provides a private helper function to construct
 	 * the HTTP POST request to change parameters of the
 	 * thermostat.
@@ -152,15 +172,11 @@ class HoneywellWifiAPI
 	private function postToThermostat($body)
 	{
 		// 	'CoolNextPeriod' => null,
-		// 	'CoolSetpoint' => null,
-		// 	'DeviceID' => self::DEVICE_ID,
 		// 	'FanMode' => null,
 		// 	'HeatNextPeriod' => null,
-		// 	'HeatSetpoint' => 72,
 		// 	'StatusCool' => null, // 1 for hold, 0 for regular
 		// 	'StatusHeat' => null, // 1 for hold, 0 for regular
-		// 	'SystemSwitch' => null, // 2 is off, 1 is heat, 3 for AC
-
+		
 		$request = $this->client->post(self::PROTOCOL . '://' . self::URL . '/portal/Device/SubmitControlScreenChanges', [
 			'headers' => [
 				'Accept' => 'application/json, text/javascript, */*; q=0.01',
